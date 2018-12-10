@@ -1,0 +1,53 @@
+<!doctype html>
+
+<html lang="en" dir="ltr">
+
+<head>
+    <title>Crystal Collector</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <h1>Crystal Collector</h1>
+
+    <div id="rules-box">
+
+        <p>You will be given a random number at the start of the game.</p>
+
+        <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+
+        <p>You win the game by matching your total score to random number. You lose the game if your total score goes above the random number.</p>
+
+        <p>The value of each crystal is hidden from you until you click on it.</p>
+
+        <p>Each time when the game starts, the game will change the values of each crystal.</p>
+
+    </div>
+
+    <div id="goal-number-box"></div>
+    <div id="score-box">
+        <div id="wins" class="score-style"></div>
+        <div id="losses" class="score-style"></div>
+    </div>
+
+    <div id="crystal-box">
+        <div class="crystal"><button id="crystal-1"></button></div>
+        <div class="crystal"><button id="crystal-2"></button></div>
+        <div class="crystal"><button id="crystal-3"></button></div>
+        <div class="crystal"><button id="crystal-4"></button></div>
+    </div>
+
+    <div id="generated-number"></div>
+
+    <div id="user-box">
+
+        <h3>Your total score is:</h3>
+        <div id="user-input-box"></div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script src="./assets/javascript/main.js"></script>
+</body>
+</html>
