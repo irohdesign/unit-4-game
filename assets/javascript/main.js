@@ -1,66 +1,95 @@
-var wins;
-var losses;
+var wins = 0;
+var losses = 0;
+var firstCrystal;
+var secondCrystal;
+var thirdCrystal;
+var fourthCrystal;
+var userCrystalNumber;
+var generatedNumber;
 
-var userCrystalNumber = 0;
-
-// random number at start is between 19 and 120
-var generatedNumber = Math.floor((Math.random() * 120 + 19));
 
 $("#wins").text("You have " + wins + " wins.");
 $("#losses").text("You have " + losses + " losses.");
 
-// player is shown random number at start of game
-$("#generated-number").text(generatedNumber);
-$("#user-input-box").text(userCrystalNumber);
+function randomizeNumbers() {
+    firstCrystal = Math.floor(Math.random() * 12);
+    secondCrystal = Math.floor(Math.random() * 12);
+    thirdCrystal = Math.floor(Math.random() * 12);
+    fourthCrystal = Math.floor(Math.random() * 12);
+
+    userCrystalNumber = 0;
+    generatedNumber = Math.floor((Math.random() * 120 + 19));
+    $("#generated-number").text(generatedNumber);
+    $("#user-input-box").text(userCrystalNumber);
+}
+
+randomizeNumbers();
 
 $(document).click(function() {
-    
-    // each crystal should be between 1 and 12
-    var firstCrystal = Math.floor((Math.random() * 12));;
-    var secondCrystal = Math.floor((Math.random() * 12));;
-    var thirdCrystal = Math.floor((Math.random() * 12));;
-    var fourthCrystal = Math.floor((Math.random() * 12));;
 
+    function randomizeNumbers() {
+        firstCrystal = Math.floor((Math.random()) * 12);
+        secondCrystal = Math.floor((Math.random()) * 12);
+        thirdCrystal = Math.floor((Math.random()) * 12);
+        fourthCrystal = Math.floor((Math.random()) * 12);
+    
+        console.log(firstCrystal);
+        console.log(secondCrystal);
+        console.log(thirdCrystal);
+        console.log(fourthCrystal);
+    }
+
+    // each crystal should be between 1 and 12
+    
 
     // when the player clicks a crystal, it adds a specific amount to the player's total score
 
         // game hides this amount until the player clicks a crystal
 
         // update the score counter when they click one
+    var userScore = 0;
 
     $('#crystal-1').click (function() {
         userCrystalNumber = userCrystalNumber + firstCrystal;
         $("#user-input-box").text(userCrystalNumber);
+        console.log(userCrystalNumber);
     });
 
     $('#crystal-2').click (function() {
-        userCrystalNumber = userCrystalNumber + secondCrystal;
+        userCrystalNumber = userCrystalNumber + firstCrystal;
         $("#user-input-box").text(userCrystalNumber);
     });
 
     $('#crystal-3').click (function() {
-        userCrystalNumber = userCrystalNumber + thirdCrystal;
+        userCrystalNumber = userCrystalNumber + firstCrystal;
         $("#user-input-box").text(userCrystalNumber);
     });
 
     $('#crystal-4').click (function() {
-        userCrystalNumber = userCrystalNumber + fourthCrystal;
+        userCrystalNumber = userCrystalNumber + firstCrystal;
         $("#user-input-box").text(userCrystalNumber);
     });
 
-
+   
     // the player wins if their total score matches the random number from the beginning of the game
     if(userCrystalNumber > generatedNumber) {
         alert("You lost!");
         losses++;
-        $("#user-input-box").text('0');
+        userCrystalNumber = 0;
+        generatedNumber = Math.floor((Math.random() * 120 + 19));
+        $("#generated-number").text(generatedNumber);
+        $("#user-input-box").text(userCrystalNumber);
+        randomizeNumbers();
     }
 
     if(userCrystalNumber == generatedNumber) {
         alert("You won!");
         wins++;
         userCrystalNumber = 0;
-
+        generatedNumber = Math.floor((Math.random() * 120 + 19));
+        $("#generated-number").text(generatedNumber);
+        $("#user-input-box").text(userCrystalNumber);
+        randomizeNumbers();
     }
 
     $("#wins").text("You have " + wins + " wins.");
