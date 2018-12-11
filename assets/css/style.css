@@ -1,0 +1,59 @@
+body {
+    margin: 30px 60px;
+}
+
+h3 {
+    margin-top: 30px;
+}
+
+#crystal-box {
+    margin: 30px auto;
+}
+
+#generated-number {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.crystal {
+    display: inline-block;
+    margin: auto;
+}
+
+.crystal button {
+    border: transparent 3px solid;
+    border-radius: 5px;
+    padding: 5px 15px;
+}
+
+#crystal-1 {
+    background: #d2accd;
+}
+
+#crystal-2 {
+    background: #b175b1;
+}
+
+#crystal-3 {
+    background: #7a356c;
+}
+
+#crystal-4 {
+    background: #612a56;
+}
+
+#crystal-1:hover, #crystal-2:hover, #crystal-3:hover, #crystal-4:hover {
+    background: white;
+}
+
+.crystal button:hover svg {
+    fill: #612a56;
+    transition: 1s;
+}
+
+.crystal button svg {
+    height: 50px;
+    width: 50px;
+    fill: white;
+    transition: 1s;
+}
